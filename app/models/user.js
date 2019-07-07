@@ -28,6 +28,10 @@ const userSchema = Schema({
         maxlength: 128,
         
     },
+    mobile: {
+        type: String,
+        required: true
+    },
     tokens: [
         {
             token: {

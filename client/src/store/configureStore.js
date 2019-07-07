@@ -3,8 +3,8 @@ import {createStore, combineReducers} from 'redux'
 import usersReducer from '../reducers/usersReducer'
 
 const configureStore = ()=>{
-    store = createStore(combineReducers({
-        users: usersReducer
+    const store = createStore(combineReducers({
+        user: usersReducer
     }))
 
     return store

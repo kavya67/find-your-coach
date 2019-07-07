@@ -1,5 +1,5 @@
-export const setUSer = (value)=>{
-        return {type: 'SET_USET', payload: value}
+export const setUser = (value)=>{
+        return {type: 'SET_USER', payload: value}
     }
 
 export const resetUser = ()=>{
