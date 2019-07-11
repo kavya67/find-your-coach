@@ -2,13 +2,13 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 const coachSchema = new Schema({
-    imageUrl = {
+    imageUrl: {
         type: String
     },
-    description = {
+    description: {
         type: String
     },
-    locations = [
+    locations: [
         {
             location: {
                 type: Schema.Types.ObjectId,
@@ -16,7 +16,7 @@ const coachSchema = new Schema({
             }
         }
     ],
-    userId = {
+    user: {
         type: Schema.Types.ObjectId,
         ref: "User"
     },
