@@ -24,7 +24,6 @@ router.post('/login', (req, res)=>{
             // res.send(user)
         })
             .then(token=>{
-                console.log(token)
                 res.send({token})
             })
 
