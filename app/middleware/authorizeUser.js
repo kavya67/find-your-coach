@@ -1,6 +1,5 @@
 const authorizeUser = function(req, res, next) {
     const { user } = req
-    console.log(user.role)
     if(user.role == "admin") {
         console.log("admin authorized")
         next()

@@ -44,6 +44,4 @@ router.delete("/:id", authenticateUser, authorizeUser, (req, res) => {
         .catch(err => res.status(500).send({ status: "internal server issue" }))
 })
 
-module.exports = {
-    coachRouter: router
-}
+module.exports = router
