@@ -19,11 +19,9 @@ const coachSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
         ref: "User"
-    },
+    }
 })
 
-const Coach = mongoose.Schema("Coach", coachSchema)
+const Coach = mongoose.model("Coach", coachSchema)
 
-module.exports = {
-    Coach
-}
+module.exports = Coach

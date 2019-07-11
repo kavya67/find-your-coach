@@ -1,16 +1,15 @@
 const authorizeUser = function(req, res, next) {
     const { user } = req
-    if(user.role = "admin") {
+    console.log(user.role)
+    if(user.role == "admin") {
         console.log("admin authorized")
         next()
-    } else if(user.role = "coach"){
-        console.log("admin authorized")
+    } else if(user.role == "coach"){
+        console.log("coach authorized")
         next()
     } else {
         res.status('401').send({ notice: 'unauthorized action'})
     }
 }
 
-module.exports = {
-    authorizeUser
-}
+module.exports = authorizeUser
