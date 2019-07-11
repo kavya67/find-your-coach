@@ -10,39 +10,28 @@ router.post('/register', (req,res)=>{
     const body = req.body
     const user = new User(body)
     user.save()
-        .then(user=>res.send(user))
+        .then(user=>res.send(user))  
+        // pick(user, 'username', 'email')
         .catch(err=>res.send(err))
 })
 
-//localhost:3004/users/login
-
-router.post('/login', (req, res)=>{
+router.post('/login', (req,res)=>{
     const body = req.body
     User.findByCredentials(body.email, body.password)
-        .then(user=>{
-            return user.generateToken()
-            // res.send(user)
-        })
-            .then(token=>{
-                res.send({token})
-            })
-
-        .catch(err=>res.send(err))
+        .then(user=>user.generateToken())
+            .then(token=>res.send({token}))
+        .catch(err=> res.send(err))
 })
 
-router.get('/account', authenticateUser, (req,res)=>{
+router.get('/account',authenticateUser, (req,res)=>{
     const {user} = req
     res.send(user)
-
 })
 
 router.delete('/logout', authenticateUser, (req,res)=>{
-    const {user, token} = req
-    User.findByIdAndDelete(user._id, {$pull: {tokens: {token:token}}})
-        .then(()=>{
-            res.send('successfully logged out ')
-        })
+    const {user,token} = req
+    User.findByIdAndUpdate(user._id, {$pull: {tokens:{token:token}}} )
+        .then(()=>res.send('successfully logged out'))
         .catch(err=>res.send(err))
 })
-
 module.exports = router

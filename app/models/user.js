@@ -94,13 +94,13 @@ userSchema.methods.generateToken = function(){
         username: user.username,
         createdAt: Number(new Date())
     }
-
     const token = jwt.sign(tokenData, 'jwt@123')
-    user.tokens.push({token})
+    user.tokens.push({
+        token
+    })
 
     return user.save()
         .then(function(user){
-            
             return Promise.resolve(token)
         })
         .catch(function(err){
@@ -108,7 +108,6 @@ userSchema.methods.generateToken = function(){
         })
     
 }
-
 userSchema.statics.findByToken = function(token){
     const User = this
     let tokenData
