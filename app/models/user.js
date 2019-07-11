@@ -5,7 +5,7 @@ const validatorPkg = require('validator')
 const bcryptjs = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 
-const userSchema = Schema({
+const userSchema = new Schema({
     username: {
         type: String,
         required: true,
