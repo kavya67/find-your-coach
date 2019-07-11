@@ -9,11 +9,13 @@ const userSchema = Schema({
     username: {
         type: String,
         required: true,
+        unique: true,
         minlength: 5
     },
     email: {
         type: String,
         required: true,
+        unique: true,
         validator: function(value){
             return validatorPkg.isEmail(value)
         },
