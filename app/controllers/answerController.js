@@ -10,6 +10,8 @@ router.post('/', authenticateUser, (req, res)=>{
     const answer = new Answer(body)
     answer.user = user._id
     user.save()
+        .then(answer=>res.send(answer))
+        .catch(err=>res.send(err))
 })
 
 router.get('/', authenticateUser, (req,res)=>{
