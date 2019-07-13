@@ -31,7 +31,7 @@ router.put("/:id", authenticateUser, authorizeUser, (req, res) => {
     const id = req.params.id
     const user = req.user
     const body = req.body
-    Coach.findByOneAndUpdate({_id: id, user: user._id}, {$set: body}, {new: true, runValidators: true})
+    Coach.findByIdAndUpdate({_id: id, user: user._id}, {$set: body}, {new: true, runValidators: true})
         .then(coach => res.send(coach))
         .catch(err => res.send(err))
 })
@@ -40,10 +40,8 @@ router.delete("/:id", authenticateUser, authorizeUser, (req, res) => {
     const id = req.params.id
     const user = req.user
     Coach.findOneAndDelete({_id: id, user: user._id})
-        .then(coach => res.send(coach))
+        .then(coach => res.send({ status: "successfully deleted..." }))
         .catch(err => res.status(500).send({ status: "internal server issue" }))
 })
 
-module.exports = {
-    coachRouter: router
-}
+module.exports = router

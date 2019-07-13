@@ -31,7 +31,7 @@ router.get('/account',authenticateUser, (req,res)=>{
 router.delete('/logout', authenticateUser, (req,res)=>{
     const {user,token} = req
     User.findByIdAndUpdate(user._id, {$pull: {tokens:{token:token}}} )
-        .then(()=>res.send('successfully logged out'))
+        .then(()=>res.send('successfully logged out..'))
         .catch(err=>res.send(err))
 })
 module.exports = router
