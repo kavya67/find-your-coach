@@ -47,7 +47,7 @@ router.put('/:id', authenticateUser, (req,res)=>{
 router.delete('/:id', authenticateUser, (req,res)=>{
     const id = req.params.id
     Question.findOneAndDelete({_id: id})
-        .then(question=>res.send(question))
+        .then(()=>res.send('successfully deleted'))
         .catch(err=>res.send(err))
 })
 
