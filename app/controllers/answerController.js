@@ -9,14 +9,14 @@ router.post('/', authenticateUser, (req, res)=>{
     const body = req.body
     const answer = new Answer(body)
     answer.user = user._id
-    user.save()
+    answer.save()
         .then(answer=>res.send(answer))
         .catch(err=>res.send(err))
 })
 
 router.get('/', authenticateUser, (req,res)=>{
     Answer.find({
-        user: req.user._id,
+        user: req.user._id
 
     }).populate('question', ['questionText'])
         .then(answers=>res.send(answers))
@@ -55,4 +55,4 @@ router.delete('/:id', authenticateUser, (req,res)=>{
         .catch((err)=>res.send(err))
 })
 
-module.export = router
+module.exports = router

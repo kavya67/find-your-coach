@@ -2,6 +2,9 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 const answerSchema = new Schema({
+    selectedAnswer:{
+        type: String
+    },
     user: {
         type: Schema.Types.ObjectId,
         ref:'User'
