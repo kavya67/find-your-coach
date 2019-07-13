@@ -18,6 +18,19 @@ router.post("/", authenticateUser, authorizeUser, (req, res) => {
     }
 })
 
+router.put("/:id", authenticateUser, (req, res) => {
+    const user = req.user
+    if(user.role === "admin"){
+        const id = req.params.id
+        const body = req.body
+        Location.findOneAndUpdate({_id: id}, {$set: body}, {new: true,  runValidators: true})
+            .then(location => res.send(location))
+            .catch(err => req.send(err))
+    } else {
+        res.send({status: "user unauthorized"})
+    }
+})
+
 router.get("/", authenticateUser, (req, res) => {
     Location.find()
         .then(location => res.send(location))
