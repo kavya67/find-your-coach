@@ -1,8 +1,11 @@
 import React from 'react'
-import axios from '../../config/config'
+import axios from '../config/config'
 
-import {setUser} from '../../actions/usersAction'
+import {setUser} from '../actions/usersAction'
 import {connect} from 'react-redux'
+
+import CustomerAccount from "./customer/CustomerAccount";
+import CoachAccount from "./coach/CoachAccount";
 
 class Account extends React.Component{
     componentDidMount(){
@@ -19,12 +22,21 @@ class Account extends React.Component{
             .catch(err=>console.log(err))
     }
     render(){
-        return(
-            <div>
-                <h3>Welcome {this.props.user.username} </h3>
-                <h4>role - {this.props.user.role}</h4>
-            </div>
-        )
+        if(this.props.user.role === "coach"){
+            return(
+                <CoachAccount user={this.props.user}/>
+            )
+        } else if(this.props.user.role === "customer") {
+            return(
+                <div>
+                    <CustomerAccount user={this.props.user}/>
+                </div>
+            )
+        } else {
+            return (
+                <></>
+            )
+        }
     }
 }
 
