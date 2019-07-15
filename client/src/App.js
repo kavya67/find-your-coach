@@ -3,10 +3,10 @@ import {connect} from 'react-redux'
 import {BrowserRouter, Link, Switch, Route} from 'react-router-dom'
 import _ from 'lodash'
 
-import CustomerRegister from './components/user/CustomerRegister'
-import Login from './components/user/Login'
-import Account from './components/user/Account'
-import Logout from './components/user/Logout'
+import CustomerRegister from './components/CustomerRegister'
+import Login from './components/Login'
+import Account from './components/Account'
+import Logout from './components/Logout'
 
 class App extends React.Component{
     render(){

@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from '../../config/config'
-import UserForm from '../user/Form'
+import UserForm from '../Form'
 
 class CustomerRegister extends React.Component{
     constructor(props){
