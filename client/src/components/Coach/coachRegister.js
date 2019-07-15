@@ -2,17 +2,15 @@ import React from 'react'
 import axios from '../../config/config'
 import UserForm from '../Form'
 
-class CustomerRegister extends React.Component{
+class CoachRegister extends React.Component{
     constructor(props){
         super(props)
-    
         this.handleSubmit = this.handleSubmit.bind(this)
     }
-    
-   
 
     handleSubmit(formData){
-        
+        formData.role = "coach"
+        console.log(formData)
         axios.post('/users/register', formData)
             .then(response=>{
                 if(response.data.errors){
@@ -23,16 +21,17 @@ class CustomerRegister extends React.Component{
             })
 
     }
+
     render(){
         return(
             <div>
-                <h2>Customer Registration Form</h2>
+                <h2>Coach Register Form</h2>
                 <UserForm handleSubmit={this.handleSubmit}/>
-
-                
             </div>
         )
     }
+
+
 }
 
-export default CustomerRegister
+export default CoachRegister

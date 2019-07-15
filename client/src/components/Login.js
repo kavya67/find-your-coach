@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from '../git config/config';
+import axios from '../config/config';
 
 class Loginform extends React.Component{
     constructor(props){
