@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 import {BrowserRouter, Link, Switch, Route} from 'react-router-dom'
 import _ from 'lodash'
 
+
+import CustomerRegister from './components/user/CustomerRegister'
 import CustomerRegister from './components/User/CustomerRegister'
 import CoachRegister from './components/Coach/coachRegister'
 import Home from './components/Home'
@@ -13,7 +15,7 @@ import Logout from './components/Logout'
 class App extends React.Component{
     render(){
         return(
-            <div>
+            <div className="container">
                 <BrowserRouter>
                     <h2>{this.props.msg}</h2> 
                     <ul>
