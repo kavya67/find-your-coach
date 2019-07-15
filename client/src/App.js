@@ -23,15 +23,16 @@ class App extends React.Component{
                     <ul className="nav justify-content-end">
                         {_.isEmpty(this.props.user)? (
                             
-                           <div className="nav-item">
-                                    <Link to = '/users/register' className="btn btn-outline-dark btn-sm">Register</Link>
-                                    <span> </span>
-                                    <Link to = '/users/login'  className="btn btn-outline-dark btn-sm">Login</Link>
+                           <div>
+                                <Link to = '/users/register' className="btn btn-outline-dark btn-sm">Register</Link>
+                                <span> </span>
+                                <Link to = '/users/login'  className="btn btn-outline-dark btn-sm">Login</Link>
                            </div>
 
                         ) : (
                             <div>
                                 <Link to = '/users/account'className="btn btn-outline-dark btn-sm"> Account </Link>
+                                <span> </span>
                                 <Link to = '/users/logout' className="btn btn-outline-dark btn-sm"> Logout </Link>
                             </div>
                         )}

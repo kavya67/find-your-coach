@@ -40,21 +40,37 @@ class Loginform extends React.Component{
     }
     render(){
         return(
-            <div>
-                <h2> Login Form </h2>
-                <form onSubmit = {this.handlesubmit}>
-                    <label>
-                        Email 
-                        <input type = 'text' name='email' onChange={this.handleChange}/>
-                    </label>
-                    <label>
-                        Password 
-                        <input type = 'password' name = 'password' onChange={this.handleChange}/>
-                    </label>
-                    <label>
-                        <input type= 'submit' />
-                    </label>
-                </form>
+            <div className="container pt-sm-5 offset-3">
+                <div className="Row">
+                    <div className="col-md-6">
+                    <form onSubmit = {this.handlesubmit}>
+                        <div className="form-group">
+                        <label> Email </label>
+                            <input 
+                                type='text'
+                                name='email'
+                                className="form-control" 
+                                onChange={this.handleChange}/>
+                        </div>
+                        
+                        <div className="form-group">
+                        <label> Password </label>
+                            <input 
+                                type='password' 
+                                name='password' 
+                                className="form-control"
+                                onChange={this.handleChange}/>
+                        </div>
+                        
+                        <label className="form-group">
+                            <input type='submit' />
+                        </label>
+                    </form>
+
+                    </div>
+                </div>
+                
+                
             </div>
         )
     }
