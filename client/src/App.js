@@ -14,25 +14,31 @@ import Logout from './components/Logout'
 class App extends React.Component{
     render(){
         return(
-            <div className="container">
+
+            <div className= "container pt-sm-5">
+
                 <BrowserRouter>
-                    <h2>{this.props.msg}</h2> 
-                    <ul>
+                    <div className="navbar navbar-light bg-light">
+                    <span className="nav-brand"><h2>{this.props.msg}</h2></span>
+                    <ul className="nav justify-content-end">
                         {_.isEmpty(this.props.user)? (
                             
-                           <div>
-                                <Link to = '/users/register'>Register</Link>
-                                <Link to = '/users/login'>Login</Link>
+                           <div className="nav-item">
+                                    <Link to = '/users/register' className="btn btn-outline-dark btn-sm">Register</Link>
+                                    <span> </span>
+                                    <Link to = '/users/login'  className="btn btn-outline-dark btn-sm">Login</Link>
                            </div>
 
                         ) : (
                             <div>
-                                <Link to = '/users/account'> Account </Link>
-                                <Link to = '/users/logout'> Logout </Link>
+                                <Link to = '/users/account'className="btn btn-outline-dark btn-sm"> Account </Link>
+                                <Link to = '/users/logout' className="btn btn-outline-dark btn-sm"> Logout </Link>
                             </div>
                         )}
                     </ul>
 
+                    </div>
+                   
                     <Switch>
                         
                         <Route path = '/users/register' component = {CustomerRegister} exact/>
