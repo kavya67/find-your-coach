@@ -32,30 +32,45 @@ handleSubmit(e){
     }
   render(){
       return(
-          <div>
-              <form onSubmit = {this.handleSubmit}>
-                    <label>
-                        Name -
-                        <input type = "text" name="username" value = {this.state.username} onChange={this.handleChange}/>
-                    </label><br/>
-                    <label>
-                        Email - 
-                        <input type = 'text' name='email' value = {this.state.email} onChange = {this.handleChange}/>
-                    </label><br/>
-                    <label>
-                        Password - 
-                        <input type = 'password' name = 'password' value = {this.state.password} onChange = {this.handleChange}/>
-                    </label><br/>
-                    <label>
-                        Mobile - 
-                        <input type = 'text'  name = 'mobile' value = {this.state.mobile} onChange = {this.handleChange}/>
-                    </label><br/>
-                    <label>
-                        <input type = 'submit' />
-                    </label>
- 
-                </form>
-          </div>
+        <form className="form-group" onSubmit = {this.handleSubmit}>
+            Name
+            <input
+                type="text"
+                className="form-control"
+                name="username"
+                placeholder="Username"
+                value={this.state.username}
+                onChange={this.handleChange}
+            /><br/>
+            Email 
+            <input
+                type='text'
+                className="form-control"
+                placeholder="E-mail"
+                name='email'
+                value={this.state.email}
+                onChange={this.handleChange}
+            /><br/>
+            Password 
+            <input
+                type='password'
+                className="form-control"
+                placeholder="Password"
+                name='password'
+                value={this.state.password}
+                onChange={this.handleChange}
+            /><br/>
+            Mobile 
+            <input
+                type='text'
+                className="form-control"
+                placeholder="Mobile"
+                name='mobile'
+                value={this.state.mobile}
+                onChange={this.handleChange}
+            /><br/>
+            <button type="submit" className="btn btn-dark">Register</button>
+        </form>
       )
   }
 
