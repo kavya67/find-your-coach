@@ -4,7 +4,7 @@ import {BrowserRouter, Link, Switch, Route} from 'react-router-dom'
 import _ from 'lodash'
 
 
-import CustomerRegister from './components/User/CustomerRegister'
+import CustomerRegister from './components/Customer/CustomerRegister'
 import CoachRegister from './components/Coach/coachRegister'
 import Home from './components/Home'
 import Login from './components/Login'
