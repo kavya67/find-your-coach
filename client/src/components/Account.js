@@ -3,7 +3,7 @@ import axios from '../config/config'
 
 import {setUser} from '../actions/usersAction'
 import {connect} from 'react-redux'
-import CustomerAccount from './user/CustomerAccount';
+import CustomerAccount from './User/CustomerAccount';
 import CoachAccount from './Coach/CoachAccount';
 
 class Account extends React.Component{
