@@ -3,7 +3,11 @@ import {connect} from 'react-redux'
 import {BrowserRouter, Link, Switch, Route} from 'react-router-dom'
 import _ from 'lodash'
 
+
 import CustomerRegister from './components/user/CustomerRegister'
+import CustomerRegister from './components/User/CustomerRegister'
+import CoachRegister from './components/Coach/coachRegister'
+import Home from './components/Home'
 import Login from './components/Login'
 import Account from './components/Account'
 import Logout from './components/Logout'
@@ -31,10 +35,14 @@ class App extends React.Component{
                     </ul>
 
                     <Switch>
+                        
                         <Route path = '/users/register' component = {CustomerRegister} exact/>
                         <Route path = '/users/login' component = {Login} exact/>
                         <Route path = '/users/Account' component = {Account} exact/>
                         <Route path = '/users/logout' component = {Logout} exact/>
+                        <Route path  = '/' component={Home} exact/>
+                        <Route path = "/coach/register" component={CoachRegister} exact/>
+                        <Route path = "/customer/register" component={CustomerRegister} exact/>
                     </Switch>
 
                 </BrowserRouter>
