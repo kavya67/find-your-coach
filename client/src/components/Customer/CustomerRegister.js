@@ -9,10 +9,7 @@ class CustomerRegister extends React.Component{
         this.handleSubmit = this.handleSubmit.bind(this)
     }
     
-   
-
     handleSubmit(formData){
-        
         axios.post('/users/register', formData)
             .then(response=>{
                 if(response.data.errors){
@@ -21,15 +18,17 @@ class CustomerRegister extends React.Component{
                         this.props.history.push('/users/login')
                     }
             })
-
     }
+
     render(){
         return(
-            <div>
-                <h2>Customer Registration Form</h2>
-                <UserForm handleSubmit={this.handleSubmit}/>
-
-                
+            <div className="container pt-sm-4 col-sm-6">
+                <div className="card">
+                    <div className="card-body">
+                        <h5 className="card-title text-center">Customer Registration</h5>
+                        <UserForm handleSubmit={this.handleSubmit}/>
+                    </div>
+                </div>
             </div>
         )
     }

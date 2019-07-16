@@ -24,7 +24,7 @@ class CoachRegister extends React.Component{
 
     render(){
         return(
-            <div>
+            <div className="container pt-sm-5">
                 <h2>Coach Register Form</h2>
                 <UserForm handleSubmit={this.handleSubmit}/>
             </div>
