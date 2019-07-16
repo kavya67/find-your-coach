@@ -5,7 +5,7 @@ import _ from 'lodash'
 
 
 import CustomerRegister from './components/Customer/CustomerRegister'
-import CoachRegister from './components/Coach/CoachRegister'
+import CoachRegister from './components/Coach/coachRegister'
 import Home from './components/Home'
 import Login from './components/Login'
 import Account from './components/Account'

@@ -40,32 +40,35 @@ class Loginform extends React.Component{
     }
     render(){
         return(
-            <div className="container pt-sm-5 offset-3">
-                <div className="Row">
-                    <div className="col-md-6">
-                    <form onSubmit = {this.handlesubmit}>
-                        <div className="form-group">
-                        <label> Email </label>
-                            <input 
-                                type='text'
-                                name='email'
-                                className="form-control" 
-                                onChange={this.handleChange}/>
-                        </div>
-                        
-                        <div className="form-group">
-                        <label> Password </label>
-                            <input 
-                                type='password' 
-                                name='password' 
-                                className="form-control"
-                                onChange={this.handleChange}/>
-                        </div>
-                        
-                        <label className="form-group">
-                            <input type='submit' />
-                        </label>
-                    </form>
+            <div className="container pt-sm-5 col-sm-6">
+                <div className="card">
+                    <div className="card-body">
+                     <h5 className="card-title text-center">LOGIN</h5>
+                        <form onSubmit = {this.handlesubmit}>
+                            <div className="form-group">
+                            <label> Email </label>
+                                <input 
+                                    type='text'
+                                    name='email'
+                                    placeholder='E-mail'
+                                    className="form-control" 
+                                    onChange={this.handleChange}/>
+                            </div>
+                            
+                            <div className="form-group">
+                            <label> Password </label>
+                                <input 
+                                    type='password' 
+                                    name='password'
+                                    placeholder='Password'
+                                    className="form-control"
+                                    onChange={this.handleChange}/>
+                            </div>
+                            
+                            <label className="form-group">
+                                <input type='submit' />
+                            </label>
+                        </form>
 
                     </div>
                 </div>
