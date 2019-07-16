@@ -25,7 +25,7 @@ class CustomerRegister extends React.Component{
             <div className="container pt-sm-4 col-sm-6">
                 <div className="card">
                     <div className="card-body">
-                        <h5 className="card-title text-center">Customer Registration</h5>
+                        <h5 className="card-title text-center">Register as Coach</h5>
                         <UserForm handleSubmit={this.handleSubmit}/>
                     </div>
                 </div>
