@@ -22,7 +22,7 @@ class CustomerRegister extends React.Component{
 
     render(){
         return(
-            <div className="container pt-sm-4 col-sm-6">
+            <div className="container pt-sm-5 col-sm-6">
                 <div className="card">
                     <div className="card-body">
                         <h5 className="card-title text-center">Register as Coach</h5>

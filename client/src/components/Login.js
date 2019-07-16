@@ -66,7 +66,7 @@ class Loginform extends React.Component{
                             </div>
                             
                             <label className="form-group">
-                                <input type='submit' />
+                                <input type='submit' className="btn btn-dark" />
                             </label>
                         </form>
 
