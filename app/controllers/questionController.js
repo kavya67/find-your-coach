@@ -20,7 +20,9 @@ router.post('/', authenticateUser, authorizeUser, (req,res)=>{
 })
 
 router.get('/', authenticateUser, (req,res)=>{
-    Question.find()
+    const role = req.query.role
+    // console.log(role)
+    Question.find({questionType: role})
         .then(questions=>res.send(questions))
         .catch(err=>res.send(err))
 })
