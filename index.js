@@ -14,10 +14,7 @@ const answerRouter = require('./app/controllers/answerController')
 const reviewRouter = require("./app/controllers/reviewController");
 const bookingRouter = require("./app/controllers/bookingController");
 
-
-
 const port = 3004;
-
 
 app.use('/users', userRouter)
 app.use('/coach', coachRouter)
