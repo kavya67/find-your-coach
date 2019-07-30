@@ -10,8 +10,6 @@ const questionSchema = new Schema({
    questionText: {
        type: String,
        required: true,
-       
-
    },
     questionOptions: [String]
 
