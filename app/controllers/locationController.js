@@ -1,8 +1,10 @@
 const router = require("express").Router()
+const _ = require("lodash")
 
 const authenticateUser = require("../middleware/authenticateUser");
 const authorizeUser = require("../middleware/authorizeUser");
 const Location = require("../models/locations");
+const Coach = require("../models/coach");
 
 router.post("/", authenticateUser, authorizeUser, (req, res) => {
     const user = req.user
